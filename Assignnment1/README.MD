@@ -10,7 +10,7 @@
 ## Here is the image of my account settings with email address:
 
 
-![Profile Settings](/images/logo.png)
+![Profile Settings](Assignnment1/Account Settings.png)
 
 
 ## Here is the image of my profile with the badge:
