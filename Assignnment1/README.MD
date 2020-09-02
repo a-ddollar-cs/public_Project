@@ -25,6 +25,7 @@
 
 ## Here is the image of my profile with the badge:
 
+![Badges](https://github.com/CSUChico-CINS465/CINS465-F20-Austin-Dollar/blob/master/Assignnment1/Badges.png)
 
 
 
