@@ -10,7 +10,7 @@
 ## Here is the image of my account settings with email address:
 
 
-![AccountSettings](Assignnment1/AccountSettings.png)
+![AccountSettings](https://github.com/CSUChico-CINS465/CINS465-F20-Austin-Dollar/blob/master/Assignnment1/AccountSettings.png)
 
 
 ## Here is the image of my profile with the badge:
