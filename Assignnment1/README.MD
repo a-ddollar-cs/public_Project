@@ -3,6 +3,16 @@
 ## To earn by badge I completed the following challenges:
 
 ###### Print Hello World 
+###### Python If-Else
+###### Arithmetic operators
+###### Loops
+###### Write a Function
+###### Validating Postal Codes
+###### Matrix Script
+###### Maximize it!
+###### The Minion Game
+###### ginorts
+###### No Idea!
 
 
 
