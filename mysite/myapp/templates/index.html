@@ -7,4 +7,9 @@
     <li>{{ sugg }}</li>
 {% endfor %}
 </ul>
+<form action="/" method="post">
+{{ form }}
+{% csrf_token %}
+<input type="submit" class="button" value="Pick Color"/>
+</form>
 {% endblock %}
