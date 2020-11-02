@@ -1,15 +1,30 @@
+
 {% extends "base.html" %}
-{% load static %}
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
 <ul>
-{% for sugg in suggestions %}
-    <li>{{ sugg }}</li>
-{% endfor %}
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            {% for sugg in suggestions %}
+            <div class="large-12 medium-12 cell">
+                <li>{{ sugg.suggestion }} - {{ sugg.author }}
+                    <ul>
+                        {% for comm in sugg.comments %}
+                            <li>{{ comm.comment }} - {{ comm.author }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </ul>
+{{ comments }}
+
 <form action="/" method="post">
-{{ form }}
 {% csrf_token %}
-<input type="submit" class="button" value="Pick Color"/>
+{{ form }}
+<input type="submit" class="button" value="Add Suggestion"/>
 </form>
+
 {% endblock %}

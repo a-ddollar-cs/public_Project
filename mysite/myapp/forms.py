@@ -10,8 +10,9 @@ class SuggestionForm(forms.Form):
         
     )
 
-    def save(self):
+    def save(self, request):
         suggestion_instance = models.SuggestionModel()
         suggestion_instance.suggestion = self.cleaned_data["suggestion"]
+        suggestion_instance.author = request.user
         suggestion_instance.save()
         return suggestion_instance
