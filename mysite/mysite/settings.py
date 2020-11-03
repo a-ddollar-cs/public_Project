@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["35.208.136.36", "127.0.0.1", "localhost"]
 
+LOGIN_REDIRECT_URL="/"
+LOGIN_URL="/login/"
 
 # Application definition
 
