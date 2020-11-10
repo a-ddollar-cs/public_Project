@@ -14,7 +14,7 @@ def must_be_unique(value):
 
 class SuggestionForm(forms.Form):
     suggestion = forms.CharField(
-        label='What is your favorite color?',
+        label='What kind of trophy did you harvest?',
         required=True,
         max_length=240,
         

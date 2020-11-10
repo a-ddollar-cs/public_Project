@@ -1,8 +1,37 @@
 
 {% extends "base.html" %}
+{% load static %}
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
+<div id="app">
+    {% verbatim %}
+    {{ message }}
+    {% endverbatim %}
+</div>
+
 <ul>
+    <div id="app-4">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                
+                <ul>
+                    <div class="large-12 medium-12 cell">
+                <li v-for="sugg in suggestions">
+                    {% verbatim %}
+                    {{ sugg.suggestion }} - {{ sugg.author }}
+                    <ul>
+                        <li v-for="comm in sugg.comments">
+                            {{ comm.comment }} - {{ comm.author }}
+                        </li>
+                    </ul>
+                    {% endverbatim %}
+                </li>
+                    </div>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
     <div class="grid-container">
         <div class="grid-x grid-padding-x">
             {% for sugg in suggestions %}
@@ -19,12 +48,21 @@
         </div>
     </div>
 </ul>
+
+
+
+
+
 {{ comments }}
 {% if request.user.is_authenticated %}
 <form action="/" method="post">
 {% csrf_token %}
 {{ form }}
-<input type="submit" class="button" value="Add Suggestion"/>
+<input type="submit" class="button" value="Add a Trophy"/>
 </form>
 {% endif %}
+{% endblock %}
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="{% static "js/myvue.js" %}"></script>
 {% endblock %}

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
@@ -15,7 +15,7 @@ def logout_view(request):
 # Create your views here.
 @login_required
 def index(request):
-    title = "Assignment 4"
+    title = "Braggin Board"
     if request.method == "POST":
            if request.user.is_authenticated:
             suggestion_form = forms.SuggestionForm(request.POST)
@@ -48,6 +48,7 @@ def index(request):
     }
     return render(request, "index.html", context=context)
 
+
 @login_required
 def page(request):
     title = "Assignment 3"
@@ -57,6 +58,29 @@ def page(request):
         "body":content
     }
     return render(request, "base.html", context=context)
+
+
+def get_suggestions(request):
+    suggestion_objects = models.SuggestionModel.objects.all()
+    suggestion_list = {}
+    suggestion_list["suggestions"]=[]
+    for sugg in suggestion_objects:
+        comment_objects = models.CommentModel.objects.filter(suggestion=sugg)
+        temp_sugg = {}
+        temp_sugg["suggestion"]=sugg.suggestion
+        temp_sugg["author"]=sugg.author.username
+        temp_sugg["id"]=sugg.id
+        temp_sugg["comments"]=[]
+        for comm in comment_objects:
+            temp_comm={}
+            temp_comm["comment"]=comm.comment
+            temp_comm["id"]=comm.id
+            temp_comm["author"]=comm.author.username
+            temp_sugg["comments"]+=[temp_comm]
+        suggestion_list["suggestions"]+=[temp_sugg]
+        return JsonResponse(suggestion_list)
+
+
 
 def register(request):
     if request.method == "POST":
