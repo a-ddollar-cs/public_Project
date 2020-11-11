@@ -28,6 +28,23 @@ class SuggestionForm(forms.Form):
         return suggestion_instance
 
 
+class CommentForm(forms.Form):
+    comment = forms.CharField(
+        label='Comment',
+        required=True,
+        max_length=240,
+    )
+
+    def save(self, request, sugg_id):
+        suggestion_instance = models.SuggestionModel.objects.get(id=sugg_id)
+        comment_instance = models.CommentModel()
+        comment_instance.suggestion = suggestion_instance
+        comment_instance.comment = self.cleaned_data["comment"]
+        comment_instance.author = request.user
+        comment_instance.save()
+        return comment_instance
+
+
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(
         label="Email",

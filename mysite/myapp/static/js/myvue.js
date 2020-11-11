@@ -16,7 +16,7 @@ var app = new Vue({
       //Adapted from https://stackoverflow.com/questions/36572540/vue-js-auto-reload-refresh-data-with-timer
       created: function() {
             this.fetchSuggestionList();
-            this.timer = setInterval(this.fetchSuggestionList, 10000);
+            this.timer = setInterval(this.fetchSuggestionList, 600000);
       },
       methods: {
         fetchSuggestionList: function() {

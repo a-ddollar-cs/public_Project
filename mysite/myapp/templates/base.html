@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static "css/foundation.css" %}">
+    <link rel="stylesheet" href="{% static "css/app.css" %}">
     {% block css %}{% endblock %}
   </head>
   <body>
@@ -25,6 +26,11 @@
         </div>
         <div class="top-bar-right">
           <ul class="menu">
+            {% if user.is_authenticated %}
+            <li>
+              <a href="/suggestion/">Add Suggestion</a>
+            </li>
+            {% endif %}
               <li>
                 {% if user.is_authenticated %}
                     Welcome {{ user.username }}
