@@ -5,12 +5,12 @@
 <div class="grid-x grid-padding-x">
   <!-- <div class="large-4 medium-4 small-12 cell"></div> -->
   <div class="large-4 medium-4 small-12 large-offset-4 medium-offset-4 cell">
-    <h3 class="text-center">Suggestion</h3>
-    <form action="/suggestion/" method="post">
+    <h3 class="text-center">Post Your Trophy!</h3>
+    <form action="/suggestion/" method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
         {{ form }}
-        <input type="submit" class="button expanded" value="Add Suggestion" />
+        <input type="submit" class="button expanded" value="Add Harvest" />
     </form>
   </div>
 </div>

@@ -18,6 +18,7 @@
                     <div class="card-info-content">
                         {% verbatim %}
                         <h3 class="lead">{{ sugg.suggestion }}</h3>
+                        <img :src="sugg.image" :alt="sugg.image_description" height="200"/>
                         authored by {{ sugg.author }}
                         </br>
                         created on {{ sugg.date }}
