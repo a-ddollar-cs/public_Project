@@ -128,3 +128,4 @@ MEDIA_ROOT = 'media/'
 MEDIA_URL = '/media/'
 
 
+ASGI_APPLICATION = 'mysite.asgi.application'
