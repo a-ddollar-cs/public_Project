@@ -13,7 +13,7 @@ def must_be_unique(value):
 
 class SuggestionForm(forms.Form):
     suggestion = forms.CharField(
-        label='Suggestion',
+        label='Tell us about your harvest!',
         required=True,
         max_length=240,
     )
