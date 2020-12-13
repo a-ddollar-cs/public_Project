@@ -14,4 +14,9 @@ from channels.routing import ProtocolTypeRouter
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
 
-application = get_asgi_application()
+django.setup()
+
+application = ProtocolTypeRouter({
+  "http": AsgiHandler(),
+  # Just HTTP for now. (We can add other protocols later.)
+})
