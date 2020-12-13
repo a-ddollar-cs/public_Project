@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'chat',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,5 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = 'media/'
 MEDIA_URL = '/media/'
+
+ASGI_APPLICATION = 'mysite.asgi.application'
