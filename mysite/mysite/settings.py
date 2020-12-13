@@ -33,6 +33,7 @@ LOGIN_URL="/login/"
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'chat',
-    'channels',
 ]
 
 MIDDLEWARE = [
@@ -127,5 +127,4 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = 'media/'
 MEDIA_URL = '/media/'
 
-
-ASGI_APPLICATION = 'mysite.asgi.application'
+ASGI_APPLICATION = "mysite.asgi.application"
