@@ -126,3 +126,7 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = 'media/'
 MEDIA_URL = '/media/'
+
+
+#channels
+ASGI_APPLICATION = 'mysite.asgi.application'
