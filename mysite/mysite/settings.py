@@ -25,7 +25,7 @@ SECRET_KEY = 'idnbs+rf2n@hstts4=%@&8ewv#g!o0c-4c5nqqc_@5c&9e5)^l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["35.208.136.36", "127.0.0.1", "localhost", "35.208.124.152" ]
+ALLOWED_HOSTS = ["35.208.136.36", "127.0.0.1", "localhost", "35.208.124.152", "bragginboard.xyz", "www.bragginboard.xyz" ]
 
 LOGIN_REDIRECT_URL="/"
 LOGIN_URL="/login/"
