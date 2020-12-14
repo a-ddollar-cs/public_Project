@@ -18,9 +18,8 @@
             <li>
                 {% if user.is_authenticated %}
                     <a href="/logout/">Logout</a>
-                    <a href="/chat/">Chat</a>
                 {% else %}
-                    <a href="/login/">Login</a>
+                   
                 {% endif %}
             </li>
           </ul>
@@ -32,7 +31,12 @@
               <a href="/suggestion/">Make a Post</a>
             </li>
             {% endif %}
-              <li>
+            <li>
+              {% if user.is_authenticated %}
+                  <a href="/chat/">Chatroom</a>
+              {% endif %}
+          </li>
+            <li>
                 {% if user.is_authenticated %}
                     Welcome {{ user.username }}
                 {% else %}
