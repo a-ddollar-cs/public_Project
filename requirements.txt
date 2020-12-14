@@ -14,5 +14,5 @@ six==1.15.0
 sqlparse==0.3.1
 toml==0.10.1
 wrapt==1.12.1
-channels==3.0.2
+channels==3.0.1
 channels_redis==3.2.0
