@@ -7,14 +7,11 @@ class SuggestionModel(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     published_on = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(
-        max_length=144,
+        max_length=240,
         upload_to='uploads/%Y/%m/%d/',
         null=True
     )
-    image_description = models.CharField(
-        max_length=240,
-        null=True
-    )
+  
 
     def __str__(self):
         return self.author.username + " " + self.suggestion
