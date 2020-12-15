@@ -11,7 +11,10 @@ class SuggestionModel(models.Model):
         upload_to='uploads/%Y/%m/%d/',
         null=True
     )
-  
+    image_description = models.CharField(
+        max_length=240,
+        null=True
+    )
 
     def __str__(self):
         return self.author.username + " " + self.suggestion
